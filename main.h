@@ -20,5 +20,6 @@ typedef struct print
 } print_t;
 
 int _printf(const char *format, ...);
+int print_prg(va_list __attribute__((unused)), char *, unsigned int);
 
 #endif
