@@ -53,6 +53,6 @@ int print_buf(char *buf, unsigned int nbuf);
 char *fill_binary_array(char *binary, long int int_in, int isneg, int limit);
 char *fill_oct_array(char *bnr, char *oct);
 char *fill_long_oct_array(char *bnr, char *oct);
-
+char *fill_short_oct_array(char *bnr, char *oct);
 
 #endif
