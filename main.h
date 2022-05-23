@@ -36,6 +36,7 @@ int prinlint(va_list arguments, char *buf, unsigned int ibuf);
 int prinloct(va_list arguments, char *buf, unsigned int ibuf);
 int prinlhex(va_list arguments, char *buf, unsigned int ibuf);
 int prinlupx(va_list arguments, char *buf, unsigned int ibuf);
+int prinhint(va_list arguments, char *buf, unsigned int ibuf);
 
 
 #endif
