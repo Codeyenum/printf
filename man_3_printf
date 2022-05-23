@@ -1,0 +1,86 @@
+./" Manpage for _printf().
+.TH _printf "" "20-04-2022" "1.0" "ALX C Project Manual"
+.SH NAME
+_printf - formatted output conversion
+.SH SYNOPSIS
+.BI "#include ''main.h''
+.PP
+.BI "int _printf(const char *format, ...);"
+.PP
+.SH DESCRIPTION
+The arguments in the _printf() function produce output according to a format as described below. The function _printf() write output to stdout, the standard output stream.
+.SH Format of the format string
+The format string is a character string, beginning and ending in its initial shift state, if any. The format string is composed of zero or more directives: ordinary characters (not %), which are copied unchanged to the output stream; and conversion specifications, each of which results in fetching zero or more subsequent arguments. Each conversion specification is introduced by the character %, and ends with a conversion specifier.
+.SH Conversion specifiers
+A character that specifies the type of conversion to be applied.  The conversion specifiers and their meanings are:
+.PP
+.TP
+.B c
+.R The \fIint\fR argument is converted to an \fIunsigned char\fR, and the resulting character is written.
+.TP
+.B s
+.R The \fIconst char *\fR argument is expected to be a pointer to an array of character type (pointer to a string). Characters from the array are written up to (but not including) a terminating null byte ('\0'), the array must contain a terminating null byte.
+.TP
+.B %
+.R A '%' is written. No argument is converted. The complete conversion specification is '%%'.
+.TP
+.B d, i
+.R The \fIint\fR argument is converted to signed decimal notation.
+.TP
+.B o, u, x, X
+.R The \fIunsigned int\fR argument is converted to unsigned octal \fIo\fR (base 8 number), unsigned decimal \fIu\fR (base 10 number), unsigned hexadecimal \fIx\fR (base 16 number with lowercase letters) and unsigned hexadecimal \fIX\fR (base 16 number with uppercase letters).
+.TP
+.B S
+.R The \fIconst char\fR argument is a pointer to an array of characters, that converts the corresponding argument to a character st\
+ring, with non-printable characters (0 < ASCII value < 32 or >= 127).
+.TP
+.B p
+.R The \fIvoid * pointer\fR argument is printed in hexadecimal.
+.TP
+.B S
+.R The \fIconst char\fR argument is a pointer to an array
+.SH The flag characters
+The character \fI%\fR is followed by zero the following flags:
+.TP
+.B +
+.R A sign \fI+\fR or \fI-\fR will be placed before a number followed by a signed conversion.
+.TP
+.B #
+.R Print number in hexadecimal, upeercase hexadecimal and octal where the first character of the output string is made zero.
+.TP
+.B ' '
+.R A space in blank should be left before a positive number followed by a signed conversion.
+.SH NOTES
+.R The \fB_printf()\fR is a project collaboration between \Joshua Ajayi\fR and \Godwin Martins\fR, actual students of Software Engineering at \fBALX\fR.
+.SH RETURN VALUE
+Upon successful return, these functions return the number of characters printed (excluding the null byte used to end output to strings).
+.PP
+If an output error is encountered, a negative value is returned.
+.SH CONFORMING TO
+_printf(): A function that produces output according to a format.
+.SH EXAMPLES
+.R To print the the string \fBHello ALX!\fR and its length in decimal.
+
+#include ''main.h''
+
+int main(void)
+
+{
+
+	int length;
+
+	_printf(''%s'', ''Hello, ALX!'')
+
+	_printf(''Hello ALX! contains %d characters'', length);
+
+	length = _printf(''Hello ALX!'');
+
+	return (0);
+
+}
+.SH SEE ALSO
+.R printf(3)
+.SH COLOPHON
+This page is a manual for the _printf() function, which is printf()-like, created according to the specifications provided on the ALX intranet.
+.SH AUTHORS
+Written by \fBNnadi Chigozie\fR and \fBAbanum Olise\fR.
